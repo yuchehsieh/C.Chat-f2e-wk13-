@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Chatting room</title>
+
+<!-- Firebase JS -->
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+
+<!-- JQuery -->
+ <script src="js/jquery-3.1.1.slim.min.js"></script>
+
+<!-- JS&CSS -->
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+</head>
+
+<body>
+  <div id="header"><h1>Welcome Chatting Room</h1></div>
+
+<ul id="cards">
+
+  <li id="card1">
+
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+     <div class="mdl-card__title">
+         <h2 class="mdl-card__title-text">SIGN IN</h2>
+     </div>
+     <div class="mdl-card__supporting-text">
+     <!-- text field -->
+     <form action="#">
+         <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="email">
+           <label class="mdl-textfield__label" for="sample1">Email</label>
+         </div>
+     </form>
+     <form action="#">
+         <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="password" id="password">
+           <label class="mdl-textfield__label" for="sample1">Password</label>
+         </div>
+     </form>
+     <!-- Sign Information -->
+        <div class="mdl-card__supporting-text" id="sign-info">No one login...</div>
+     <!-- text field -->
+    </div>
+     <ul id="card1_btn">
+       <li>
+          <!-- Raised button with ripple -->
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnSignUp">
+                      Sign Up
+          </button>
+        </li>
+
+         <li>
+              <!-- Raised button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnSignIn">
+                  Sign In
+            </button>
+        </li>
+
+        <li>
+            <!-- Raised disabled button -->
+              <button class="mdl-button mdl-js-button mdl-button--raised" id ="btnSignOut" disabled>
+                  Sign Out
+              </button>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+  <!--card1 end-->
+
+<li id="card2">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+     <div class="mdl-card__title">
+       <h2 class="mdl-card__title-text">USER INFO UPDATE</h2>
+     </div>
+    <div class="mdl-card__supporting-text">
+      <!-- text field -->
+      <form action="#">
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="userName">
+              <label class="mdl-textfield__label" for="sample1">User Name</label>
+            </div>
+      </form>
+
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="input_age">
+          <label class="mdl-textfield__label" for="sample2">Age</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </form>
+
+      <form action="#">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="input_occu">
+                <label class="mdl-textfield__label" for="sample1">Occupation</label>
+              </div>
+      </form>
+      <!-- user photo upload -->
+        <div class="mdl-textfield mdl-js-textfield">
+            <p>Your photo : </p>
+            <input type="file" id="file" name="file"/>
+      </div>
+      <!-- Floating Multiline Textfield -->
+         <form action="#">
+             <div class="mdl-textfield mdl-js-textfield">
+               <textarea class="mdl-textfield__input" type="text" rows= "3" id="input_des" ></textarea>
+               <label class="mdl-textfield__label" for="sample5">Descriptions</label>
+             </div>
+         </form>
+         <!-- text field -->
+        </div>
+        <!-- Raised button with ripple -->
+          <button id="btnSubmit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            Submit
+          </button>
+    </div>
+  </div>
+  </li>
+  <!--card2 end-->
+    <li id="card3">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">USER INFO</h2>
+          </div>
+
+      <div class="mdl-grid">
+        <div class="mdl-card__supporting-text" id="user-pic">
+          <img src="" class="demo-avatar" id="img">
+        </div>
+       <div class="mdl-card__supporting-text" id="user-info">
+            <ul id='example-messages' class="example-chat-messages">
+            <li><strong>Name</strong> : <span id="profile-name">N/A</span></li>
+            <li><strong>Email</strong> : <span id="profile-email">N/A</span></li>
+            <li><strong>Age</strong> : <span id="profile-age">N/A</span></li>
+            <li><strong>Occupation</strong> : <span id="profile-occupation">N/A</span></li>
+            <li><strong>Descriptions</strong> : <span id="profile-descriptions">N/A</span></li>
+
+         </ul>
+       </div>
+      </div>
+     </div>
+    </li>
+  <!--card3 end-->
+    <li id="card4">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+           <div class="mdl-card__title">
+             <h2 class="mdl-card__title-text">LET'S CHAT</h2>
+           </div>
+
+           <div class="mdl-card__supporting-text">
+         <ul id='example-messages2' class="example-chat-messages"></ul>
+         <footer>
+           <div class="mdl-layout__content mdl-color--grey-100">
+             <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="messageInput" name="email" placeholder="Type a message ..."/>
+           </div>
+         </footer>
+       </div>
+      </div>
+    </li>
+  <!--card4 end-->
+
+</ul>
+
+  </body>
+
+</html>

@@ -1,0 +1,129 @@
+body{
+  background: url(../img/bk1.png);
+
+}
+
+ h1 {
+  text-align: center;
+  margin-top: 20px;
+  color:#DBAFC1;
+}
+
+
+
+ul{
+  list-style: none;
+}
+#cards{
+  margin: auto;
+}
+#cards > li{
+  float: left;
+  margin-left: 4%;
+  margin-right: 1%;
+  margin-bottom: 40px;
+}
+/*card 1*/
+
+button{
+width :100px;
+}
+#card1_btn{
+list-style: none;
+margin-left:-40px;
+margin-top:200px;
+}
+#card1_btn li{
+  float:left;
+  margin-left: 10px;
+}
+
+.demo-card-wide.mdl-card {
+  width: 340px;
+  height: 600px;
+  margin-top: 50px;
+}
+.mdl-card__title {
+  color: #fff;
+  height: 70px;
+  background-color: #545F66;
+}
+.mdl-card__title h2{
+
+padding-top: 20px;
+font-family:monospace;
+font-size: 250%;
+color:#fff;
+}
+#sign-info {
+  margin-left: -15px;
+  color: #545F66;
+  font-size: 120%;
+  font-family: Arial;
+}
+/*card1 end */
+
+/*card2 */
+#btnSubmit{
+text-align:center;;
+margin-bottom: 25px;
+margin-left: 15px;
+}
+p{
+  font-size: 16px;
+  color: #545F66;
+  font-family: Arial;
+}
+/*card2 end*/
+
+/*card3*/
+#user-info {
+  padding: 10px;
+  box-sizing: border-box;
+}
+#user-pic {
+  padding:10px;
+  width: 72px;
+  box-sizing: border-box;
+}
+#example-messages{
+padding:0;
+}
+.demo-avatar {
+    width: 60px;
+    height: 60px;
+    padding: 0px;
+}
+.mdl-grid{
+  margin: 20px 0 0 20px;
+}
+/*card4*/
+#card4 ul {
+  list-style: none;
+  margin: 0px;
+  padding: 20px;
+  height: 420px;
+  overflow: auto;
+}
+#example-messages2 ul li {
+    font-family: Roboto;
+    font-size: 120%;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+#card4 ul li:last-child {
+    margin: 0px;
+}
+#card4 ul .example-chat-username {
+    margin-right: 10px;
+}
+#card4 footer{
+  margin-left: 20px;
+}
+.chatimg{
+  width: 40px;
+  height: 40px;
+  margin: 5px 5px 5px 5px;
+}
+/*card4 end*/
